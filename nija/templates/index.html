@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet"  href="{% static 'css/style.css' %}">    
+
+</head>
+<body>
+    <div class="new_div">
+        <header><h1>Add a Dojo</h1></header>
+        <form action="/" method="post">
+            {% csrf_token %}
+            <div>
+                <label>Name:</label>{{form.name}}<br>
+                <labl>City:</label>{{form.city}}<br>
+                <label>State:</label>{{form.state}}<br>
+                
+            </div>
+                <input class="input" type="submit">
+        </form>
+    </div>
+    <div class="new_div_">
+        <header><h1>Add a Nija</h1></header>
+        <form action="/" method="post">
+            {% csrf_token %}
+            <div>
+                <label>First Name: </label>{{second_form.first_name}}<br>
+                <labl>Last Name: </label>{{second_form.last_name}}<br>
+                <label>Dojo:</label>{{second_form.dojo}}<br>
+
+            </div>
+                <input class="input" type="submit">
+        </form>
+    </div>
+    <div class="bot-div">
+        {% for obj_ in objs_ %}
+            <ul>
+            <h2>{{obj_.dojo}}</h2>    
+                <li>{{obj_.first_name}} {{obj_.last_name}}</li>
+            </ul>
+        {% endfor %}
+    </div>
+ 
+</body>
+</html>

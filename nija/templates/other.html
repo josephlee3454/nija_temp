@@ -1,0 +1,13 @@
+
+<div>
+    <form action="/other/" method="post">
+        {% csrf_token %}
+        <div>
+            <label>First Name: </label>{{second_form.first_name}}
+            <labl>Last Name: </label>{{second_form.last_name}}
+            <label>Dojo:</label>{{second_form.dojo}}
+
+        </div>
+            <input class="input" type="submit">
+    </form>
+</div>
