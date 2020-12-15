@@ -1,0 +1,146 @@
+>>> from nija.models import *
+>>> Dojo.objects.create(name= "jave program", city= "lee", state= "CA")
+<Dojo: jave program  lee CA>
+>>> Dojo.objects.create(name= "python program", city= "seattle", state= "WA")
+<Dojo: python program  seattle WA>
+>>> Dojo.objects.create(name= "JavaScript program", city= "Chicago", state= "IL")
+<Dojo: JavaScript program  Chicago IL>
+>>> Dojo.objects.all()
+<QuerySet [<Dojo: coding dojo  seattle Wa>, <Dojo: the u  miami fl>, <Dojo: joseph Lee  seattle Wa>, <Dojo: the awesome doj  seattle Wa>, <Dojo: joseph Lee  seattle Wa>, <Dojo: jave program  lee CA>, <Dojo: python program  seattle WA>, <Dojo: JavaScript program  Chicago IL>]>
+>>> Dojo.objects.last()
+<Dojo: JavaScript program  Chicago IL>
+>>> Dojo.objects.last().delete()
+(1, {'nija.Dojo': 1})
+>>> Dojo.objects.all()
+<QuerySet [<Dojo: coding dojo  seattle Wa>, <Dojo: the u  miami fl>, <Dojo: joseph Lee  seattle Wa>, <Dojo: the awesome doj  seattle Wa>, <Dojo: joseph Lee  seattle Wa>, <Dojo: jave program  lee CA>, <Dojo: python program  seattle WA>]>
+>>> Dojo.objects.last().delete()
+(1, {'nija.Dojo': 1})
+>>> Dojo.objects.last().delete()
+(1, {'nija.Dojo': 1})
+>>> Dojo.objects.all()
+<QuerySet [<Dojo: coding dojo  seattle Wa>, <Dojo: the u  miami fl>, <Dojo: joseph Lee  seattle Wa>, <Dojo: the awesome doj  seattle Wa>, <Dojo: joseph Lee  seattle Wa>]>
+>>> Dojo.objects.create(name= "jave program", city= "lee", state= "CA")
+<Dojo: jave program  lee CA>
+>>> Dojo.objects.create(name= "python program", city= "seattle", state= "WA")
+<Dojo: python program  seattle WA>
+>>> Dojo.objects.create(name= "JavaScript program", city= "Chicago", state= "IL")
+<Dojo: JavaScript program  Chicago IL>
+>>> Nija.objects.all()
+<QuerySet [<Nija: josephLee>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: josephLee>, <Nija: josephLee>]>
+>>> Nija.objects.dojo
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'dojo'
+>>> Nija.objects.filter(dojo)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'dojo' is not defined
+>>> print(Nija.objects.all())
+<QuerySet [<Nija: josephLee>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: josephLee>, <Nija: josephLee>]>
+>>> Nija.objects.all().values()
+<QuerySet [{'id': 1, 'first_name': 'joseph', 'last_name': 'Lee', 'dojo_id': 1}, {'id': 2, 'first_name': 'roger', 'last_name': 'rabbit', 'dojo_id': 2}, {'id': 3, 'first_name': 'roger', 'last_name': 'rabbit', 'dojo_id': 2}, {'id': 4, 'first_name': 'roger', 'last_name': 'rabbit', 'dojo_id': 2}, {'id': 5, 'first_name': 'joseph', 'last_name': 'Lee', 'dojo_id': 4}, {'id': 6, 'first_name': 'joseph', 'last_name': 'Lee', 'dojo_id': 3}]>
+>>> Nija.objects.create(first_name= "joe", last_name="lee", dojo_id = 1)
+<Nija: joelee>
+>>> Nija.objects.create(first_name= "joseph", last_name="paulson", dojo_id = 4)
+<Nija: josephpaulson>
+>>> Nija.objects.create(first_name= "mt", last_name="rainer", dojo_id = 3)
+<Nija: mtrainer>
+>>> Nija.objects.create(first_name= "hi", last_name="bye", dojo_id = 1)
+<Nija: hibye>
+>>> Nija.objects.create(first_name= "john", last_name="smith", dojo_id = 1)
+<Nija: johnsmith>
+>>> Nija.objects.create(first_name= "chris", last_name="nolan", dojo_id = 2)
+<Nija: chrisnolan>
+>>> Nija.objects.create(first_name= "david", last_name="bowie", dojo_id = 2)
+<Nija: davidbowie>
+>>> Nija.objects.create(first_name= "john", last_name="lennon", dojo_id = 2)
+<Nija: johnlennon>
+>>> Nija.objects.create(first_name= "peyton", last_name="mannin", dojo_id = 3)
+<Nija: peytonmannin>
+>>> Nija.objects.create(first_name= "walter", last_name="peyton", dojo_id = 3)
+<Nija: walterpeyton>
+>>> Nija.objects.create(first_name= "deangelo", last_name="russel", dojo_id = 3)
+<Nija: deangelorussel>
+>>> Nija.objects.get(dojo_id=1)
+>>> Dojo.objects.all()
+<QuerySet [<Dojo: coding dojo  seattle Wa>, <Dojo: the u  miami fl>, <Dojo: joseph Lee  seattle Wa>, <Dojo: the awesome doj  seattle Wa>, <Dojo: joseph Lee  seattle Wa>, <Dojo: jave program  lee CA>, <Dojo: python program  seattle WA>, <Dojo: JavaScript program  Chicago IL>]>
+>>> Dojo.objects.last()
+<Dojo: JavaScript program  Chicago IL>
+>>> Dojo.objects.last().delete()
+(1, {'nija.Dojo': 1})
+>>> Dojo.objects.all()
+<QuerySet [<Dojo: coding dojo  seattle Wa>, <Dojo: the u  miami fl>, <Dojo: joseph Lee  seattle Wa>, <Dojo: the awesome doj  seattle Wa>, <Dojo: joseph Lee  seattle Wa>, <Dojo: jave program  lee CA>, <Dojo: python program  seattle WA>]>
+>>> Dojo.objects.last().delete()
+(1, {'nija.Dojo': 1})
+>>> Dojo.objects.last().delete()
+(1, {'nija.Dojo': 1})
+>>> Dojo.objects.all()
+<QuerySet [<Dojo: coding dojo  seattle Wa>, <Dojo: the u  miami fl>, <Dojo: joseph Lee  seattle Wa>, <Dojo: the awesome doj  seattle Wa>, <Dojo: joseph Lee  seattle Wa>]>
+>>> Dojo.objects.create(name= "jave program", city= "lee", state= "CA")
+<Dojo: jave program  lee CA>
+>>> Dojo.objects.create(name= "python program", city= "seattle", state= "WA")
+<Dojo: python program  seattle WA>
+>>> Dojo.objects.create(name= "JavaScript program", city= "Chicago", state= "IL")
+<Dojo: JavaScript program  Chicago IL>
+>>> Nija.objects.all()
+<QuerySet [<Nija: josephLee>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: josephLee>, <Nija: josephLee>]>
+>>> Nija.objects.dojo
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'dojo'
+>>> Nija.objects.filter(dojo)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'dojo' is not defined
+>>> print(Nija.objects.all())
+<QuerySet [<Nija: josephLee>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: josephLee>, <Nija: josephLee>]>
+>>> Nija.objects.all().values()
+<QuerySet [{'id': 1, 'first_name': 'joseph', 'last_name': 'Lee', 'dojo_id': 1}, {'id': 2, 'first_name': 'roger', 'last_name': 'rabbit', 'dojo_id': 2}, {'id': 3, 'first_name': 'roger', 'last_name': 'rabbit', 'dojo_id': 2}, {'id': 4, 'first_name': 'roger', 'last_name': 'rabbit', 'dojo_id': 2}, {'id': 5, 'first_name': 'joseph', 'last_name': 'Lee', 'dojo_id': 4}, {'id': 6, 'first_name': 'joseph', 'last_name': 'Lee', 'dojo_id': 3}]>
+>>> Nija.objects.create(first_name= "joe", last_name="lee", dojo_id = 1)
+<Nija: joelee>
+>>> Nija.objects.create(first_name= "joseph", last_name="paulson", dojo_id = 4)
+<Nija: josephpaulson>
+>>> Nija.objects.create(first_name= "mt", last_name="rainer", dojo_id = 3)
+<Nija: mtrainer>
+>>> Nija.objects.create(first_name= "hi", last_name="bye", dojo_id = 1)
+<Nija: hibye>
+>>> Nija.objects.create(first_name= "john", last_name="smith", dojo_id = 1)
+<Nija: johnsmith>
+>>> Nija.objects.create(first_name= "chris", last_name="nolan", dojo_id = 2)
+<Nija: chrisnolan>
+>>> Nija.objects.create(first_name= "david", last_name="bowie", dojo_id = 2)
+<Nija: davidbowie>
+>>> Nija.objects.create(first_name= "john", last_name="lennon", dojo_id = 2)
+<Nija: johnlennon>
+>>> Nija.objects.create(first_name= "peyton", last_name="mannin", dojo_id = 3)
+<Nija: peytonmannin>
+>>> Nija.objects.create(first_name= "walter", last_name="peyton", dojo_id = 3)
+<Nija: walterpeyton>
+>>> Nija.objects.create(first_name= "deangelo", last_name="russel", dojo_id = 3)
+<Nija: deangelorussel>
+>>> Nija.objects.get(dojo_id=1)
+>>> Nija.objects.filter(dojo_id='1')
+<QuerySet [<Nija: josephLee>, <Nija: joelee>, <Nija: hibye>, <Nija: johnsmith>]>
+>>> Nija.objects.filter(dojo_id='2')
+<QuerySet [<Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: chrisnolan>, <Nija: davidbowie>, <Nija: johnlennon>]>
+>>> Nija.objects.filter(dojo_id='3')
+<QuerySet [<Nija: josephLee>, <Nija: mtrainer>, <Nija: peytonmannin>, <Nija: walterpeyton>, <Nija: deangelorussel>]>
+>>> Nija.objects.filter(dojo_id='1')
+<QuerySet [<Nija: josephLee>, <Nija: joelee>, <Nija: hibye>, <Nija: johnsmith>]>
+>>> Nija.objects.filter(dojo_id='2')
+<QuerySet [<Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: chrisnolan>, <Nija: davidbowie>, <Nija: johnlennon>]>
+>>> Nija.objects.filter(dojo_id='3')
+<QuerySet [<Nija: josephLee>, <Nija: mtrainer>, <Nija: peytonmannin>, <Nija: walterpeyton>, <Nija: deangelorussel>]>
+>>> Nija.objects.filter(dojo_id='1')
+<QuerySet [<Nija: josephLee>, <Nija: joelee>, <Nija: hibye>, <Nija: johnsmith>]>
+>>> Nija.objects.filter(dojo_id='2')
+<QuerySet [<Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: chrisnolan>, <Nija: davidbowie>, <Nija: johnlennon>]>
+>>> Nija.objects.filter(dojo_id='3')
+<QuerySet [<Nija: josephLee>, <Nija: mtrainer>, <Nija: peytonmannin>, <Nija: walterpeyton>, <Nija: deangelorussel>]>
+>>> Nija.objects.filter(dojo_id='1')
+<QuerySet [<Nija: josephLee>, <Nija: joelee>, <Nija: hibye>, <Nija: johnsmith>]>
+>>> Nija.objects.filter(dojo_id='2')
+<QuerySet [<Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: rogerrabbit>, <Nija: chrisnolan>, <Nija: davidbowie>, <Nija: johnlennon>]>
+>>> Nija.objects.filter(dojo_id='3')
+<QuerySet [<Nija: josephLee>, <Nija: mtrainer>, <Nija: peytonmannin>, <Nija: walterpeyton>, <Nija: deangelorussel>]>
+
